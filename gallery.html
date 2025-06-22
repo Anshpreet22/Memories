@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memories with Gunjan 📸</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe0ec, #ffc1e3, #ffd6eb);
+      color: #4a0033;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox::after {
+      content: '✖';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: #800033;
+      text-decoration: none;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .music-control {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #800033;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .music-control:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+  </style>
+</head>
+<body>
+
+  <button class="music-control" onclick="toggleMusic()">Play Music</button>
+  
+  <audio id="bgMusic" loop>
+    <source src="images/Dollu/Chalo Dildar Chalo Pakeezah 320 Kbps.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<header>
+  <h1>Our Memories Together 💞</h1>
+</header>
+
+<a href="index.html" class="back-button">← Back to Love Page</a>
+
+<div class="gallery">
+  <!-- <img src="images/Dollu/IMG-20250504-WA0043.jpg" alt="Memory 1"> -->
+  <img src="images/Dollu/IMG-20250504-WA0054.jpg" alt="Memory 2">
+  <img src="images/Dollu/IMG-20250514-WA0007.jpg" alt="Memory 3">
+  <img src="images/Dollu/IMG-20250517-WA0032.jpg" alt="Memory 4">
+  <img src="images/Dollu/IMG-20250520-WA0013.jpg" alt="Memory 5">
+  <img src="images/Dollu/IMG-20250518-WA0012.jpg" alt="Memory 6">
+  <img src="images/Dollu/IMG20250506213626.jpg" alt="Memory 7">
+  <img src="images/Dollu/IMG-20250525-WA0024.jpg" alt="Memory 8">
+  <img src="images/Dollu/IMG20250507002451.jpg" alt="Memory 9">
+  <img src="images/Dollu/IMG-20250525-WA0014.jpg" alt="Memory 10">
+  <img src="images/Dollu/IMG-20250518-WA0007.jpg" alt="Memory 11">
+  <img src="images/Dollu/IMG-20250518-WA0010.jpg" alt="Memory 12">
+  <img src="images/Dollu/IMG-20250510-WA0000.jpg" alt="Memory 13">
+  <!-- Add more images as needed -->
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Preview">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const images = document.querySelectorAll('.gallery img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightbox.querySelector('img').src = img.src;
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+</script>
+
+<script>
+  const bgMusic = document.getElementById("bgMusic");
+  const musicBtn = document.querySelector(".music-control");
+
+  function toggleMusic() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicBtn.textContent = "Pause Music";
+    } else {
+      bgMusic.pause();
+      musicBtn.textContent = "Play Music";
+    }
+  }
+</script>
+
+</body>
+</html>

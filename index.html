@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Gunjan 💫</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0ec, #ffccd5, #ffc1e3, #ffb6d5);
+      font-family: 'Segoe UI', sans-serif;
+      color: #4a0033;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-weight: normal;
+      font-size: 1.3rem;
+      color: #80004d;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-top: 30px;
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-size: 1rem;
+      font-style: italic;
+      color: #800033;
+    }
+
+    .music-control {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #800033;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .music-control:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .gallery-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #800033;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.gallery-button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+  </style>
+</head>
+<body>
+  <button class="music-control" onclick="toggleMusic()">Play Music</button>
+  
+  <audio id="bgMusic" loop>
+    <source src="images/Dollu/Hall Of Fame -The Script.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>Good Morning, Gunjan ☀️</h1>
+    <h2>My Brave, Beautiful, and Brilliant Girl</h2>
+    <p>
+      Today is another step towards your dream... a journey that requires not just books and hours, but heart, resilience, and purpose.<br><br>
+      The road to UPSC isn’t easy, but it’s meant for the courageous.... like you and you, Gunjan, are stronger than you know. Every sunrise brings you closer to the future you're building. Believe in yourself the way I believe in you... completely, endlessly.<br><br>
+      You have my love, my strength, and my silent prayers behind every page you read and every doubt you conquer.<br><br>
+      So, take a deep breath, lift your chin, and walk forward like you were born for this... because you truly were.
+    </p>
+    <div class="signature">— Forever, Ansh 💖</div>
+  </div>
+
+  <script>
+    const bgMusic = document.getElementById("bgMusic");
+    const musicBtn = document.querySelector(".music-control");
+
+    function toggleMusic() {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.textContent = "Pause Music";
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = "Play Music";
+      }
+    }
+  </script>
+
+<a href="gallery.html" class="gallery-button" title="Memories with You 💕">Gallery 📷</a>
+
+</body>
+</html>
